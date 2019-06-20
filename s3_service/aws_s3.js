@@ -10,7 +10,7 @@ var s3 = new aws.S3({
 //     secretAccessKey: 'YOUR_SECRET-ACCESS_KEY'
 // });
 const fileFilter = (req, file, cb) => {
-    if (file.mimetype === 'image/jpsg' || file.mimetype === 'image/png' || file.mimetype === 'image/jpg') {
+    if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png' || file.mimetype === 'image/jpg') {
         cb(null, true)
     } else {
         return cb('jpeg,jpg ,png file are allowed',false)
