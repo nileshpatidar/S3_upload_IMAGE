@@ -9,5 +9,21 @@ async function aws_profile_upload(req,res){
     }
 }
 
+async function localimageupload(req,res){
+    try{
+        var images = [];
+        req.files.forEach(function(item){
+            images.push(item.path); 
+        })
+        // now you can save images array in  your database
+        console.log(images)
+    }catch(err){
+        console.log(err);
+        return err;
+    }
+}
+
+
 module.exports.profile_upload = aws_profile_upload;
+module.exports.uploadimage = localimageupload;
 
